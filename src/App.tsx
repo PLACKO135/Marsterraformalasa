@@ -1,10 +1,9 @@
 import './app.css'
+import Playername from './components/PlayerName/Playername'
 const App = () => {
   return (
     <div className="container">
-      <div className="playername">
-        <h1>Player name</h1>
-      </div>
+      <Playername/>
       <div className="resource">
       <p>Steel: <span>50</span></p>
       <div className="button_container">
