@@ -1,5 +1,5 @@
 import  { useState } from 'react'
-import './Playername.module.css'
+
 
 const Playername = () => {
     const [isedit, setIsedit] = useState<boolean>(true)
