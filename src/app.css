@@ -82,3 +82,33 @@ body{
     background-color: var(--fluorescent-cyan);
     color: var(--liver);
 }
+.Playernamechange{
+    display: flex;
+    flex-direction: column;
+}
+.Playernamechange input{
+    padding: 8px;
+    align-self: center;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+}
+.Playernamechange button{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--glaucous);
+    color: var(--liver);
+    font-weight: 800;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self:center;
+    border: none;
+    margin: 10px;
+}
+.Playernamechange button:hover{
+    background-color: var(--old-gold);
+    color: var(--glaucous);
+}
