@@ -53,15 +53,46 @@ const App = () => {
     setHeatprod(Heatprod + increment)
   }
 
+
+const handleIcrement=(increment: number, resource:number, setResource: (vlaue:number)=>void)=>{
+   setResource(resource+increment)
+}
+
   return (
     <div className="container">
       <Playername/>
-      <Resource name="Megacredit" amount={Megacredit} onchange={handlecreditchange} onchangeprod={handlecreditprod}/>
-      <Resource name="Steel" amount={Steel} onchange={handlesteelchange} onchangeprod={handlesteelchangeprod}/>
-      <Resource name="Titanite" amount={Titanite} onchange={handletitanitechange} onchangeprod={handletitanitechangeprod}/>
-      <Resource name="Herb" amount={Herb} onchange={handleherbchange} onchangeprod={handleherbchangeprod}/>
-      <Resource name="Energy" amount={Energy} onchange={handleEnergychange} onchangeprod={handleEnergychangeprod}/>
-      <Resource name="Heat" amount={Heat} onchange={handleheatchange} onchangeprod={handleheatchangeprod}/>
+      <Resource 
+        name='Megacredit' 
+        amount={Megacredit} 
+        onchange={(increment:number)=>handleIcrement(increment,Megacredit,setmegacredit)}
+        production={Megacreditprod}
+        onchangeprod={handlecreditprod}
+        />
+         <Resource 
+        name='Steel' 
+        amount={Steel} 
+        onchange={handlesteelchange}
+        production={Steelprod}
+        onchangeprod={handlesteelchangeprod}
+        />
+          <Resource 
+        name='Titanite' 
+        amount={Titanite} 
+        onchange={handletitanitechange}
+        production={Titaniteprod}
+        onchangeprod={handletitanitechangeprod}
+        />
+          <Resource 
+        name='Herb' 
+        amount={Herb} 
+        onchange={handleherbchange}
+        production={Herbprod}
+        onchangeprod={handleherbchangeprod}
+        />
+              <Resource name="Energy" production={Energyprod} amount={Energy} onchange={handleEnergychange} onchangeprod={handleEnergychangeprod}/>
+              <Resource name="Heat" production={Heatprod} amount={Heat} onchange={handleheatchange} onchangeprod={handleheatchangeprod}/>
+       <button type='submit' className='NextRound'>Next Round</button>
+
     </div>
   )
 }
