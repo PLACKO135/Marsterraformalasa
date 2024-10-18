@@ -4,28 +4,28 @@ import Resource from './components/Resource/Resorce'
 import Playername from './components/PlayerName/Playername'
 
 function App  ()  {
-  const loadmegac=()=>{
-    const savedmc=localStorage.getItem("megacredit");
+  const loadresource=(resource:string)=>{
+    const savedmc=localStorage.getItem(resource);
     return savedmc? Number(savedmc):0;
   }
-  const [Megacredit, setmegacredit] = useState(0)
-  const [Megacreditprod, setmegacreditprod] = useState(0)
+  const [Megacredit, setmegacredit] = useState(loadresource("megacredit"))
+  const [Megacreditprod, setmegacreditprod] = useState(loadresource("megacreditprod"))
  
-  const [Steel, setsteel] = useState(0)
-  const [Steelprod, setsteelprod] = useState(0)
+  const [Steel, setsteel] = useState(loadresource("steel"))
+  const [Steelprod, setsteelprod] = useState(loadresource("steelprod"))
 
-  const [Titanite, setTitanite] = useState(0)
-  const [Titaniteprod, setTitaniteprod] = useState(0)
+  const [Titanite, setTitanite] = useState(loadresource("titanite"))
+  const [Titaniteprod, setTitaniteprod] = useState(loadresource("titaniteprod"))
 
   
-  const [Herb, setherb] = useState(0)
-  const [Herbprod, setherbprod] = useState(0)
+  const [Herb, setherb] = useState(loadresource("herb"))
+  const [Herbprod, setherbprod] = useState(loadresource("herbprod"))
 
-  const [Energy, setEnergy] = useState(0)
-  const [Energyprod, setEnergyprod] = useState(0)
+  const [Energy, setEnergy] = useState(loadresource("energy"))
+  const [Energyprod, setEnergyprod] = useState(loadresource("energyprod"))
  
-  const [Heat, setHeat] = useState(0)
-  const [Heatprod, setHeatprod] = useState(0)
+  const [Heat, setHeat] = useState(loadresource("heat"))
+  const [Heatprod, setHeatprod] = useState(loadresource("heatprod"))
  
 
 const handleIcrement=(increment: number, resource:number, setResource: (vlaue:number)=>void)=>{
@@ -35,7 +35,18 @@ const handleIcrement=(increment: number, resource:number, setResource: (vlaue:nu
 
 useEffect(()=>{
   localStorage.setItem("megacredit", Megacredit.toString())
-  }, [Megacredit])
+  localStorage.setItem("megacreditprod", Megacreditprod.toString())
+  localStorage.setItem("steel", Steel.toString())
+  localStorage.setItem("steelprod", Steelprod.toString())
+  localStorage.setItem("titanite", Titanite.toString())
+  localStorage.setItem("titaniteprod", Titaniteprod.toString())
+  localStorage.setItem("herb", Herb.toString())
+  localStorage.setItem("herbprod", Herbprod.toString())
+  localStorage.setItem("energy", Energy.toString())
+  localStorage.setItem("energyprod", Energyprod.toString())
+  localStorage.setItem("heat", Heat.toString())
+  localStorage.setItem("heatprod", Heatprod.toString())
+  }, [Megacredit,Megacreditprod,Steel,Steelprod,Titanite,Titaniteprod,Herb,Herbprod,Energy,Energyprod,Heat,Heatprod])
 
 
 const handlSubmit2= (e:FormEvent)=>{ 
